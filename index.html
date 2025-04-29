@@ -428,7 +428,7 @@ border: none;
         <p>© 2025 APK Downloader | Developed By <a href="https://david-cyril.net.ng" class="creator">David Cyril</a></p>
     </div>
 <script>
-        // DOM elements
+       
         const searchForm = document.getElementById('searchForm');
         const appQueryInput = document.getElementById('appQuery');
         const loading = document.getElementById('loading');
@@ -447,7 +447,7 @@ border: none;
             }
         });
         
-        // Fetch APK function
+      
         async function fetchAPK(query) {
             // Show loading state
             loading.classList.add('active');
@@ -459,16 +459,16 @@ border: none;
                 const data = await response.json();
                 
                 if (data.success) {
-                    // Display results
+              
                     appThumbnail.src = data.thumbnail;
                     appTitle.textContent = data.apk_name;
                     downloadLink.href = data.download_link;
                     
-                    // Set download filename
+                 
                     const filename = data.apk_name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
                     downloadLink.download = ${filename}.apk;
                     
-                    // Show results
+                 
                     loading.classList.remove('active');
                     results.classList.add('active');
                 } else {
@@ -489,7 +489,7 @@ border: none;
             }, 5000);
         }
         
-        // Auto-focus input on page load
+    
         window.addEventListener('load', () => {
             appQueryInput.focus();
         });
